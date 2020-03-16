@@ -1,0 +1,7 @@
+/*
+  config.scss: allows for semi-dynamic classnames.
+  For example, setting [$block-prefix] to ["clay-"] would turn the [.form] class into [.clay-form] on compile.
+  You can leave the prefix empty, by setting it to [$block-prefix: "";]
+*/
+
+$block-prefix: ".cl-";

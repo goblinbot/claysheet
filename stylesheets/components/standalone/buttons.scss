@@ -1,0 +1,104 @@
+@import "../../config";
+@import "../../abstracts/all";
+
+.#{block-prefix}button {
+  border-radius: 20px;
+  color: $color-button-text;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  line-height: 1.6rem;
+  padding: 1rem 2.4rem 1.2rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include transition--fast;
+
+  // remove URL underline
+  &a {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $color-light-grey;
+    border-color: $color-light-grey;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+
+    &:focus,
+    &:hover {
+      background-color: darken($color-primary, 5%);
+      border-color: darken($color-primary, 5%);
+    }
+
+    &:active {
+      background-color: darken($color-primary, 10%);
+      border-color: darken($color-primary, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    border: 1px solid $color-secondary;
+
+    &:focus,
+    &:hover {
+      background-color: darken($color-secondary, 5%);
+      border-color: darken($color-secondary, 5%);
+    }
+
+    &:active {
+      background-color: darken($color-secondary, 10%);
+      border-color: darken($color-secondary, 10%);
+    }
+  }
+
+  &--text {
+    background-color: rgba(#fff, 0);
+    border: 0;
+    color: $color-primary;
+
+    &:focus,
+    &:hover {
+      background-color: lighten($color-tertiary, 10%);
+    }
+
+    &:active {
+      background-color: $color-light-grey;
+    }
+
+    &:disabled,
+    &.disabled {
+      background-color: rgba(#fff, 0);
+      border-color: rgba(#fff, 0);
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  // second selector disabled, to overrule the previous colors
+  &:disabled,
+  &.disabled {
+    color: $color-medium-grey;
+    cursor: default;
+  }
+
+  // add 0.8rem/8px spacing between buttons
+  + .#{block-prefix}button {
+    margin: 0 0.8rem;
+  }
+}

@@ -1,5 +1,14 @@
-@charset 'utf-8';
+/**
+ *  main.scss: one file to bind them all, one file to rule them all.
+ *  @imports all sub files to one easily minified CSS sheet.
+ *
+ *  Based on the 7-1 standard from SASS.
+ */
 
+@charset 'utf-8';
 @import "./stylesheets/core/all";
+
+
 @import "./stylesheets/layout/all";
 @import "./stylesheets/components/all";
+@import "./stylesheets/modifiers/all"
