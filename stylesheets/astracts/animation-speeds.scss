@@ -1,0 +1,18 @@
+/*
+  (!) this Abstract is not allowed to @import other sheets, to prevent circular imports.
+
+  A set of animation speed variables, to use with Transition, Animation, etc.
+  Based on a few UI guidelines and experience.
+*/
+
+// 100ms => "cheetah" => for Tooltips, Hover effects, Fading, Scaling
+$animation-very-fast: 0.1s;
+
+// 200ms => "rabbit" => for Hover effects, Fading, Scaling
+$animation-fast: 0.2s;
+
+// 300ms => "cat" => for Large moving objects, complex easing, slow fade effects
+$animation-normal: 0.3s;
+
+// 400ms => "turtle" => for Large moving objects, complex easing, slow fade effects
+$animation-slow: 0.4s;

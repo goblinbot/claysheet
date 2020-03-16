@@ -1,13 +1,71 @@
 @import "sizes";
+@import "animation-speeds";
 
-@mixin desktop {
+/*
+  Media query mixins, because I hate typing @media(min..)
+  Example:
+
+  .text-that-is-blue-on-desktop {
+    color: red;
+
+    @include media--large {
+      color: blue;
+    }
+  }
+*/
+
+@mixin media--large {
   @media (min-width: #{$media-large-width}) {
     @content;
   }
 }
 
-@mixin tablet {
+@mixin media--medium {
   @media (min-width: #{$media-medium-width}) and (max-width: #{media-large-width - 1px}) {
     @content;
+  }
+}
+
+@mixin media--small {
+  @media (max-width: #{$media-medium-width} -1px) {
+    @content;
+  }
+}
+
+/*
+  Mixins for transitions.
+  I prefer using a few consistent animation speeds, and adjusting their speed based on device,
+  to match the look and feel of their native applications
+
+  in short: Mobile Fast, Tablet Slow, PC normal.
+  example:
+
+  .button-that-turns-blue-on-hover {
+    @include transition--fast
+    background-color: red;
+
+    &:hover {
+      background-color: blue;
+    }
+  }
+*/
+
+@mixin transition--fast {
+  transition: $animation-fast;
+  @include media--small {
+    transition: ($animation-fast * 0.7)
+  }
+  @include media--medium {
+    transition: ($animation-fast * 1.3)
+  }
+}
+
+@mixin transition--slow {
+  transition: $animation-slow;
+  @include media--small {
+    transition: ($animation-slow * 0.65)
+  }
+  @include media--medium {
+    transition: ($animation-slow * 1.15)
   }
 }
