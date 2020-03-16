@@ -1,0 +1,17 @@
+@import "../../config";
+
+
+// output: .col || .prefix-col
+.#{$block-prefix}col {
+
+  width: 100%;
+
+  // output: .prefix-col-1 ==> .prefix-col-12
+  @for $i from 1 through 12 {
+    $width: percentage(1 / $i);
+
+    &-#{$i} {
+      width: $width;
+    }
+  }
+}
