@@ -1,0 +1,49 @@
+@import "../_variables/all";
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 10px; // declare 10px in HTML => 1rem == 10px
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: $color-body;
+  color: $color-body-text;
+  font-family: $font-stack;
+  font-size: 16px; // declare 16px as the font default. Further on we'll be working with REM.
+  font-size: 1.6rem;
+  letter-spacing: 0rem;
+  min-width: $body-min-width;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+  display: block;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+a {
+  color: $color-url;
+  cursor: pointer;
+  text-decoration: none;
+  strong,
+  span {
+    color: currentColor;
+  }
+}

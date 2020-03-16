@@ -1,0 +1,4 @@
+// (!) this Abstract is not allowed to @import other sheets, to prevent circular imports.
+
+$font-stack: 'Roboto', Arial, sans-serif;
+$font-stack--bold: $font-stack;

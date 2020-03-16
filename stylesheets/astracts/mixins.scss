@@ -1,0 +1,13 @@
+@import "sizes";
+
+@mixin desktop {
+  @media (min-width: #{$media-large-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$media-medium-width}) and (max-width: #{media-large-width - 1px}) {
+    @content;
+  }
+}
