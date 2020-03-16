@@ -1,0 +1,75 @@
+@import "../../abstracts/all";
+
+.text {
+  // positions
+
+  &--center {
+    text-align: center;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  // wrapping & spacing
+
+  &--truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  // colors
+
+  &--red {
+    color: $color-red;
+  }
+  &--blue {
+    color: $color-blue;
+  }
+  &--green {
+    color: $color-green;
+  }
+  &--black {
+    color: $color-black;
+  }
+  &--yellow {
+    color: $color-yellow;
+  }
+  &--orange {
+    color: $color-orange;
+  }
+
+  &--muted {
+    color: $color-dark-grey;
+  }
+
+  // size
+
+  &--large {
+    font-size: 2.4rem;
+    line-height: 1.333;
+    letter-spacing: 0.09rem;
+  }
+
+  &--small {
+    font-size: 1.4rem;
+    line-height: 1.429;
+  }
+
+  // capitalise
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--lowercase {
+    text-transform: lowercase;
+  }
+  &--capitalize {
+    text-transform: capitalize;
+  }
+}
