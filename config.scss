@@ -4,4 +4,6 @@
   You can leave the prefix empty, by setting it to [$block-prefix: "";]
 */
 
-$block-prefix: ".cl-";
+$block-prefix: "cl-";
+
+$form-block-name: "#{$block-prefix}form";
