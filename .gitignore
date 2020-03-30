@@ -1,2 +1,4 @@
 /stylesheets/**/*.css
 /stylesheets/**/*.css.map
+node_modules
+main.css

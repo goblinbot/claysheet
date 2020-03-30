@@ -1,9 +1,8 @@
 @import "../../config";
-
+@import "../abstracts/all";
 
 // output: .col || .prefix-col
 .#{$block-prefix}col {
-
   width: 100%;
 
   // output: .prefix-col-1 ==> .prefix-col-12

@@ -1,0 +1,79 @@
+@import "../../../config";
+@import "../../abstracts/all";
+
+$radio-outer-size: 2rem;
+$radio-inner-size: 1.2rem;
+$radio-border-size: 0.2rem;
+
+$radio-element-name: '__radio';
+
+.#{$form-block-name} {
+  &#{$radio-element-name} {
+    border: $radio-border-size solid $color-primary;
+    border-radius: 100%;
+    display: block;
+    height: $radio-outer-size;
+    position: absolute;
+    top: 1.3rem;
+    @include transition--fast;
+    width: $radio-outer-size;
+    z-index: 5;
+
+    &::before {
+      border-radius: 100%;
+      content: "";
+      display: block;
+      height: $radio-inner-size;
+      left: 0.5rem;
+      margin: $radio-border-size auto auto auto;
+      top: 0.5rem;
+      @include transition--fast;
+      width: $radio-inner-size;
+    }
+  }
+
+  /*
+    we're expanding the form__control class with a RADIO variant, using strict rules to hide the old
+    browser default radio elements, while using keeping the native 'check' functionality intact.
+  */
+  &__control {
+    &--radio {
+      cursor: pointer;
+      display: block;
+      flex: 1;
+      margin-bottom: 0.8rem;
+      position: relative;
+      user-select: none;
+      width: 100%;
+
+      label {
+        padding: 1.4rem 0 0 2.6rem;
+      }
+
+      input[type="radio"] {
+        display: none;
+        position: absolute;
+        visibility: hidden;
+
+        &:checked {
+          ~ .#{$form-block-name}#{$radio-element-name} {
+            border-color: $color-primary;
+            &::before {
+              background-color: $color-primary;
+            }
+          }
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+          ~ .#{$form-block-name}#{$radio-element-name} {
+            border-color: $color-medium-grey;
+          }
+          ~ label {
+            color: $color-medium-grey;
+          }
+        }
+      } // input[radio]
+    } //--radio
+  } //__control
+}

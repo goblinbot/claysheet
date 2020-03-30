@@ -1,7 +1,7 @@
 @import "../../config";
-@import "../../abstracts/all";
+@import "../abstracts/all";
 
-$container-spacing: 1.5rem;
+$container-spacing: 15px; // px to prevent incompatible px vs rem issues below
 
 // default container to put your 'everything' in
 .#{$block-prefix}container {
@@ -12,10 +12,10 @@ $container-spacing: 1.5rem;
 
   // Max-width the container according to our breakpoints, and container-spacing.
   @include media--medium {
-    max-width: ($tablet-width - ($container-spacing * 2));
+    max-width: ($media-medium-width - ($container-spacing * 2));
   }
   @include media--large {
-    max-width: ($tablet-width - ($container-spacing * 2));
+    max-width: ($media-large-width - ($container-spacing * 2));
   }
 
   &--full {

@@ -1,0 +1,29 @@
+{
+  "name": "claysheet",
+  "version": "1.0.0",
+  "description": "Personal pure (s)css library",
+  "style": "main.css",
+  "sass": "main.scss",
+  "scripts": {
+    "start": "npm run sass",
+    "sass": "node-sass --output-style compressed main.scss main.css",
+    "watch": "npm run sass -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goblinbot/claysheet.git"
+  },
+  "keywords": [
+    "css",
+    "library"
+  ],
+  "author": "Thijs Boerma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goblinbot/claysheet/issues"
+  },
+  "homepage": "https://github.com/goblinbot/claysheet#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
