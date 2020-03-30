@@ -1,0 +1,103 @@
+@import "../../config";
+@import "../../abstracts/all";
+
+$checkbox-outer-size: 2.2rem;
+$checkbox-inner-size: 1.8rem;
+
+.#{$form-block-name} {
+  &__checkbox {
+    border: 0.2rem solid $color-primary;
+    border-radius: 2px;
+    color: $color-white;
+    display: block;
+    height: $checkbox-outer-size;
+    position: absolute;
+    text-align: center;
+    top: 1.3rem;
+    @include transition--fast;
+    width: $checkbox-outer-size;
+    z-index: 5;
+
+    &::before {
+      color: $color-white;
+      content: "";
+      display: block;
+      font-size: 1.6rem;
+      font-weight: bold;
+      height: $checkbox-inner-size;
+      margin: auto;
+      @include transition--fast;
+
+      width: $checkbox-inner-size;
+    }
+  }
+
+  &__control {
+    &--checkbox {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      user-select: none;
+      width: 100%;
+
+      label {
+        padding: 1.6rem 0 1.5rem 3.2rem;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+        position: absolute;
+        visibility: hidden;
+
+        &:checked {
+          ~ .#{$form-block-name}__checkbox {
+            border-color: $color-primary;
+            &::before {
+              background-color: $color-primary;
+              content: "\2713";
+
+              // all browsers EXCEPT IE support using a checkmark SVG instead
+              // @supports not (-ms-high-contrast: none) {
+              //   content: url("icons/checkmark.svg");
+              // }
+            }
+          }
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+
+          ~ .#{$form-block-name}__checkbox {
+            border-color: $color-medium-grey;
+            &::before {
+              content: "";
+            }
+          }
+
+          &:checked ~ .#{$form-block-name}__checkbox::before {
+            content: "\2713";
+          }
+
+          ~ label {
+            color: $color-medium-grey;
+          }
+        }
+      } // input[checkbox]
+
+      // add error state
+      &--error {
+        .#{$form-block-name}__checkbox {
+          border-color: $color-red;
+        }
+        input[type="checkbox"]:checked {
+          ~ .#{$form-block-name}__checkbox {
+            border-color: $color-red;
+            &::before {
+              background-color: $color-red;
+            }
+          }
+        }
+      } // &--error
+    } // --checkbox
+  }
+}

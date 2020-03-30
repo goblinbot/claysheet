@@ -38,6 +38,10 @@ button {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   color: $color-url;
   cursor: pointer;
