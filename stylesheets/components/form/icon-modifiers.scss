@@ -1,0 +1,34 @@
+@import "../../config";
+@import "../../abstracts/all";
+
+$icon-size: 2.4rem;
+
+.#{$form-block-name} {
+  &__input,
+  &__dropdown {
+    // when an input or dropdown has the "has-icon" class, make space:
+    &--has-icon {
+      padding-left: 3.2rem;
+
+      .icon {
+        background-color: $color-primary;
+        background-repeat: no-repeat;
+        height: $icon-size;
+        left: 0.3rem;
+        position: absolute;
+        top: ($icon-size / 2);
+        transition: 0.3s;
+        width: $icon-size;
+      }
+    }
+
+    &--error .icon {
+      background-color: $color-red;
+    }
+
+    &--active .icon {
+      background-color: $color-primary;
+    }
+  } // __dropdown, __input
+
+}

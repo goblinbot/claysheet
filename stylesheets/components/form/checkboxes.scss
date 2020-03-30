@@ -4,8 +4,10 @@
 $checkbox-outer-size: 2.2rem;
 $checkbox-inner-size: 1.8rem;
 
+$checkbox-element-name: "__checkbox";
+
 .#{$form-block-name} {
-  &__checkbox {
+  &#{$checkbox-element-name} {
     border: 0.2rem solid $color-primary;
     border-radius: 2px;
     color: $color-white;
@@ -50,7 +52,7 @@ $checkbox-inner-size: 1.8rem;
         visibility: hidden;
 
         &:checked {
-          ~ .#{$form-block-name}__checkbox {
+          ~ .#{$form-block-name}#{$checkbox-element-name} {
             border-color: $color-primary;
             &::before {
               background-color: $color-primary;
@@ -67,14 +69,14 @@ $checkbox-inner-size: 1.8rem;
         &:disabled {
           cursor: not-allowed;
 
-          ~ .#{$form-block-name}__checkbox {
+          ~ .#{$form-block-name}#{$checkbox-element-name} {
             border-color: $color-medium-grey;
             &::before {
               content: "";
             }
           }
 
-          &:checked ~ .#{$form-block-name}__checkbox::before {
+          &:checked ~ .#{$form-block-name}#{$checkbox-element-name}::before {
             content: "\2713";
           }
 
@@ -86,11 +88,11 @@ $checkbox-inner-size: 1.8rem;
 
       // add error state
       &--error {
-        .#{$form-block-name}__checkbox {
+        .#{$form-block-name}#{$checkbox-element-name} {
           border-color: $color-red;
         }
         input[type="checkbox"]:checked {
-          ~ .#{$form-block-name}__checkbox {
+          ~ .#{$form-block-name}#{$checkbox-element-name} {
             border-color: $color-red;
             &::before {
               background-color: $color-red;

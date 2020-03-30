@@ -69,3 +69,19 @@
     transition: ($animation-slow * 1.15)
   }
 }
+
+/*
+ Form element defaults: re-used in most of the form components.
+*/
+@mixin form-element-defaults {
+  border: 0;
+  border-bottom: 1px solid $color-primary;
+  border-radius: 0;
+  display: flex;
+  padding: 0.4rem 1.6rem;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+  @include transition--fast;
+  width: 100%;
+}
