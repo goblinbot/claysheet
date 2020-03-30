@@ -1,4 +1,4 @@
-@import "../../config";
+@import "../../../config";
 @import "../../abstracts/all";
 
 $badge-opacity: 0.2;
@@ -46,7 +46,7 @@ $badge-opacity: 0.2;
 
   &--yellow {
     background: rgba($color-yellow, $badge-opacity);
-    color: $x-dark-yellow;
+    color: $color-black;
   }
 
   &--red {

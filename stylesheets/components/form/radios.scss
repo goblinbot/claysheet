@@ -1,4 +1,4 @@
-@import "../../config";
+@import "../../../config";
 @import "../../abstracts/all";
 
 $radio-outer-size: 2rem;
@@ -12,7 +12,7 @@ $radio-element-name: '__radio';
     border: $radio-border-size solid $color-primary;
     border-radius: 100%;
     display: block;
-    height: $radio-size;
+    height: $radio-outer-size;
     position: absolute;
     top: 1.3rem;
     @include transition--fast;
@@ -23,7 +23,7 @@ $radio-element-name: '__radio';
       border-radius: 100%;
       content: "";
       display: block;
-      height: $dot-size;
+      height: $radio-inner-size;
       left: 0.5rem;
       margin: $radio-border-size auto auto auto;
       top: 0.5rem;
