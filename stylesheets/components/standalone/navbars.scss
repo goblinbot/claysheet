@@ -73,6 +73,13 @@ $navbar-block-name: "#{$block-prefix}nav";
       &:hover {
         @include nav--visible;
       }
+
+      // option add seperation pixels between the dropdown items
+      &--separated {
+        .#{$navbar-block-name}__options + .#{$navbar-block-name}__options {
+          border-top: 1px solid darken($color-nav, 15%);
+        }
+      }
     }
 
     &:focus-within .#{$navbar-block-name}__dropdown,
@@ -86,6 +93,7 @@ $navbar-block-name: "#{$block-prefix}nav";
     }
   }
 
+  // use with <LI> --->  ul li ul li
   &__option {
     clear: both;
     width: 100%;
@@ -99,7 +107,8 @@ $navbar-block-name: "#{$block-prefix}nav";
     }
   }
 
-  &--bordered-items {
+  // option add seperation pixels between the dropdown items
+  &--separated {
     .#{$navbar-block-name}__item + .#{$navbar-block-name}__item {
       border-left: 1px solid darken($color-nav, 15%);
     }

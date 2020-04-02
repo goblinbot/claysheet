@@ -2,6 +2,10 @@
 
 My personal (S)CSS sheet(s), an easy align-able wheel for web projects. Despite how much I love writing SCSS, I like re-using  SCSS even better.
 
+## Compiling
+
+Open the terminal/CLI and try ``npm run sass`` or ``npm run start`` to compile main.scss into a .css file.
+
 ## Structure
 
 ### Classnames
