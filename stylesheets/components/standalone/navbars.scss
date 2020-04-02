@@ -1,0 +1,107 @@
+@import "../../../config";
+@import "../../abstracts/all";
+
+$nav-item-size: 1.2rem;
+$navbar-block-name: "#{$block-prefix}nav";
+
+@mixin nav--hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+@mixin nav--visible {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin nav__item {
+  background-color: $color-nav;
+  color: $color-nav-text;
+  cursor: pointer;
+  display: block;
+  padding: $nav-item-size;
+  position: relative;
+  text-decoration: none;
+  @include transition--fast;
+}
+
+// use with <UL> for accessibility.
+.#{$navbar-block-name} {
+  background-color: $color-nav;
+  color: $color-nav-text;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  width: 100%;
+
+  a {
+    color: $color-nav-text;
+    text-decoration: none;
+    &:hover,
+    &:active,
+    &:focus {
+      color: currentColor;
+    }
+  }
+
+  // use with <LI>
+  &__item {
+    @include nav__item;
+
+    &:active,
+    &:focus,
+    &:focus-within,
+    &:hover,
+    &--active {
+      background-color: darken($color-nav, 10%);
+    }
+
+    // use with <UL> --->  ul li ul
+    .#{$navbar-block-name}__dropdown {
+      background-color: $color-nav;
+      left: 0;
+      margin-top: $nav-item-size;
+      min-width: 4.8rem;
+      position: absolute;
+      z-index: +1;
+      @include nav--hidden;
+      @include transition--fast;
+
+      &:hover {
+        @include nav--visible;
+      }
+    }
+
+    &:focus-within .#{$navbar-block-name}__dropdown,
+    &:hover .#{$navbar-block-name}__dropdown {
+      @include nav--visible;
+    }
+
+    &--text-only {
+      cursor: default;
+      background-color: $color-nav;
+    }
+  }
+
+  &__option {
+    clear: both;
+    width: 100%;
+    @include nav__item;
+    @include transition--fast;
+
+    &:focus,
+    &:hover,
+    &--active {
+      background-color: darken($color-nav, 10%);
+    }
+  }
+
+  &--bordered-items {
+    .#{$navbar-block-name}__item + .#{$navbar-block-name}__item {
+      border-left: 1px solid darken($color-nav, 15%);
+    }
+  }
+}
