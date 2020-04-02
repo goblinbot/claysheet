@@ -76,7 +76,7 @@ $navbar-block-name: "#{$block-prefix}nav";
 
       // option add seperation pixels between the dropdown items
       &--separated {
-        .#{$navbar-block-name}__options + .#{$navbar-block-name}__options {
+        .#{$navbar-block-name}__option + .#{$navbar-block-name}__option {
           border-top: 1px solid darken($color-nav, 15%);
         }
       }
