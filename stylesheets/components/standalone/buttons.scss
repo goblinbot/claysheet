@@ -1,7 +1,7 @@
 @import "../../../config";
 @import "../../abstracts/all";
 
-.#{block-prefix}button {
+.#{$block-prefix}button {
   border-radius: 20px;
   color: $color-button-text;
   cursor: pointer;
@@ -98,7 +98,7 @@
   }
 
   // add 0.8rem/8px spacing between buttons
-  + .#{block-prefix}button {
+  + .#{$block-prefix}button {
     margin: 0 0.8rem;
   }
 }

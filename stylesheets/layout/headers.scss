@@ -9,11 +9,5 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 0.8rem;
-  min-height: 6rem;
-  padding: 0.8rem 0;
   width: 100%;
-
-  @include media--medium {
-    padding: 0.8rem 1.8rem;
-  }
 }
