@@ -79,8 +79,8 @@ $navbar-block-name: "#{$block-prefix}nav";
         .#{$navbar-block-name}__option + .#{$navbar-block-name}__option {
           border-top: 1px solid darken($color-nav, 15%);
         }
-      }
-    }
+      } // nav__dropdown--separated
+    } // nav__dropdown
 
     &:focus-within .#{$navbar-block-name}__dropdown,
     &:hover .#{$navbar-block-name}__dropdown {
@@ -91,11 +91,12 @@ $navbar-block-name: "#{$block-prefix}nav";
       cursor: default;
       background-color: $color-nav;
     }
-  }
+  } // nav__item
 
   // use with <LI> --->  ul li ul li
   &__option {
     clear: both;
+    min-width: 12rem;
     width: 100%;
     @include nav__item;
     @include transition--fast;
@@ -105,12 +106,12 @@ $navbar-block-name: "#{$block-prefix}nav";
     &--active {
       background-color: darken($color-nav, 10%);
     }
-  }
+  } // nav__option
 
   // option add seperation pixels between the dropdown items
   &--separated {
     .#{$navbar-block-name}__item + .#{$navbar-block-name}__item {
       border-left: 1px solid darken($color-nav, 15%);
     }
-  }
-}
+  } // nav--separated
+} // nav
