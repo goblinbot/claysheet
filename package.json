@@ -25,5 +25,10 @@
   "homepage": "https://github.com/goblinbot/claysheet#readme",
   "dependencies": {
     "node-sass": "^4.13.1"
+  },
+  "devDependencies": {
+    "stylelint": "^13.3.2",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0"
   }
 }
