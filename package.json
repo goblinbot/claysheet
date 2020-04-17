@@ -1,6 +1,6 @@
 {
   "name": "claysheet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Personal pure (s)css library",
   "style": "main.css",
   "sass": "main.scss",
@@ -15,6 +15,7 @@
     "url": "git+https://github.com/goblinbot/claysheet.git"
   },
   "keywords": [
+    "scss",
     "css",
     "library"
   ],

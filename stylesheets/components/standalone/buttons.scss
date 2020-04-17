@@ -1,7 +1,8 @@
-@import "../../../config";
-@import "../../abstracts/all";
+@import '../../../config';
+@import '../../abstracts/all';
 
 .#{$block-prefix}button {
+  @include transition--fast;
   border-radius: 20px;
   color: $color-button-text;
   cursor: pointer;
@@ -13,8 +14,6 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-
-  @include transition--fast;
 
   // remove URL underline
   &a {

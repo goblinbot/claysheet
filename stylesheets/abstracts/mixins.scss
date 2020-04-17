@@ -1,5 +1,5 @@
-@import "sizes";
-@import "animation-speeds";
+@import 'sizes';
+@import 'animation-speeds';
 
 /*
   Media query mixins, because I hate typing @media(min..)
@@ -53,20 +53,20 @@
 @mixin transition--fast {
   transition: $animation-fast;
   @include media--small {
-    transition: ($animation-fast * 0.7)
+    transition: ($animation-fast * 0.7);
   }
   @include media--medium {
-    transition: ($animation-fast * 1.3)
+    transition: ($animation-fast * 1.3);
   }
 }
 
 @mixin transition--slow {
   transition: $animation-slow;
   @include media--small {
-    transition: ($animation-slow * 0.65)
+    transition: ($animation-slow * 0.65);
   }
   @include media--medium {
-    transition: ($animation-slow * 1.15)
+    transition: ($animation-slow * 1.15);
   }
 }
 
@@ -74,14 +74,14 @@
  Form element defaults: re-used in most of the form components.
 */
 @mixin form-element-defaults {
+  @include transition--fast;
   border: 0;
   border-bottom: 1px solid $color-primary;
   border-radius: 0;
   display: flex;
-  padding: 0.4rem 1.6rem;
   flex: 1;
   flex-direction: column;
+  padding: 0.4rem 1.6rem;
   position: relative;
-  @include transition--fast;
   width: 100%;
 }

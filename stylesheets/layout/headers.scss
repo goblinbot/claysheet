@@ -1,11 +1,11 @@
-@import "../../config";
-@import "../abstracts/all";
+@import '../../config';
+@import '../abstracts/all';
 
 .#{$block-prefix}header {
   align-items: center;
   background: $color-header-background;
-  color: $color-header-text;
   border-bottom: 1px solid $color-medium-grey;
+  color: $color-header-text;
   display: flex;
   flex-direction: column;
   margin-bottom: 0.8rem;

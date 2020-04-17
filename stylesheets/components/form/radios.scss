@@ -1,5 +1,5 @@
-@import "../../../config";
-@import "../../abstracts/all";
+@import '../../../config';
+@import '../../abstracts/all';
 
 $radio-outer-size: 2rem;
 $radio-inner-size: 1.2rem;
@@ -9,25 +9,25 @@ $radio-element-name: '__radio';
 
 .#{$form-block-name} {
   &#{$radio-element-name} {
+    @include transition--fast;
     border: $radio-border-size solid $color-primary;
     border-radius: 100%;
     display: block;
     height: $radio-outer-size;
     position: absolute;
     top: 1.3rem;
-    @include transition--fast;
     width: $radio-outer-size;
     z-index: 5;
 
     &::before {
+      @include transition--fast;
       border-radius: 100%;
-      content: "";
+      content: '';
       display: block;
       height: $radio-inner-size;
       left: 0.5rem;
       margin: $radio-border-size auto auto auto;
       top: 0.5rem;
-      @include transition--fast;
       width: $radio-inner-size;
     }
   }
@@ -50,7 +50,7 @@ $radio-element-name: '__radio';
         padding: 1.4rem 0 0 2.6rem;
       }
 
-      input[type="radio"] {
+      input[type='radio'] {
         display: none;
         position: absolute;
         visibility: hidden;
@@ -58,6 +58,7 @@ $radio-element-name: '__radio';
         &:checked {
           ~ .#{$form-block-name}#{$radio-element-name} {
             border-color: $color-primary;
+
             &::before {
               background-color: $color-primary;
             }
@@ -66,9 +67,11 @@ $radio-element-name: '__radio';
 
         &:disabled {
           cursor: not-allowed;
+
           ~ .#{$form-block-name}#{$radio-element-name} {
             border-color: $color-medium-grey;
           }
+
           ~ label {
             color: $color-medium-grey;
           }

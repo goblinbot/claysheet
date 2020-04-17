@@ -1,13 +1,13 @@
-@import "../../../config";
-@import "../../abstracts/all";
+@import '../../../config';
+@import '../../abstracts/all';
 
 $badge-opacity: 0.2;
 
 .#{$block-prefix}badge {
+  @include transition--fast;
   background: rgba($color-dark-grey, $badge-opacity);
-  color: $color-dark-grey;
-
   border-radius: 3px;
+  color: $color-dark-grey;
   cursor: default;
   display: inline;
   font-size: 1.4rem;
@@ -15,14 +15,14 @@ $badge-opacity: 0.2;
   letter-spacing: 0.4px;
   line-height: 0.75;
   padding: 0.6rem;
-  @include transition--fast;
 
   // interaction
   &a {
     text-decoration: none;
   }
 
-  &--highlightable, &a {
+  &--highlightable,
+  &a {
     &:hover {
       opacity: ($badge-opacity * 2);
     }

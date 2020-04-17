@@ -1,4 +1,3 @@
-/stylesheets/**/*.css
-/stylesheets/**/*.css.map
+**/*.css
+**/*.css.map
 node_modules
-main.css

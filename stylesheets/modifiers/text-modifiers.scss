@@ -1,8 +1,7 @@
-@import "../abstracts/all";
+@import '../abstracts/all';
 
 .text {
   // positions
-
   &--center {
     text-align: center;
   }
@@ -16,7 +15,6 @@
   }
 
   // wrapping & spacing
-
   &--truncate {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -24,7 +22,6 @@
   }
 
   // colors
-
   &--red {
     color: $color-red;
   }
@@ -49,11 +46,10 @@
   }
 
   // size
-
   &--large {
     font-size: 2.4rem;
-    line-height: 1.333;
     letter-spacing: 0.09rem;
+    line-height: 1.333;
   }
 
   &--small {
@@ -62,7 +58,6 @@
   }
 
   // capitalise
-
   &--uppercase {
     text-transform: uppercase;
   }

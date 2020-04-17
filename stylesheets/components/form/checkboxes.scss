@@ -1,13 +1,14 @@
-@import "../../../config";
-@import "../../abstracts/all";
+@import '../../../config';
+@import '../../abstracts/all';
 
 $checkbox-outer-size: 2.2rem;
 $checkbox-inner-size: 1.8rem;
 
-$checkbox-element-name: "__checkbox";
+$checkbox-element-name: '__checkbox';
 
 .#{$form-block-name} {
   &#{$checkbox-element-name} {
+    @include transition--fast;
     border: 0.2rem solid $color-primary;
     border-radius: 2px;
     color: $color-white;
@@ -16,20 +17,18 @@ $checkbox-element-name: "__checkbox";
     position: absolute;
     text-align: center;
     top: 1.3rem;
-    @include transition--fast;
     width: $checkbox-outer-size;
     z-index: 5;
 
     &::before {
+      @include transition--fast;
       color: $color-white;
-      content: "";
+      content: '';
       display: block;
       font-size: 1.6rem;
       font-weight: bold;
       height: $checkbox-inner-size;
       margin: auto;
-      @include transition--fast;
-
       width: $checkbox-inner-size;
     }
   }
@@ -46,7 +45,7 @@ $checkbox-element-name: "__checkbox";
         padding: 1.6rem 0 1.5rem 3.2rem;
       }
 
-      input[type="checkbox"] {
+      input[type='checkbox'] {
         display: none;
         position: absolute;
         visibility: hidden;
@@ -54,10 +53,10 @@ $checkbox-element-name: "__checkbox";
         &:checked {
           ~ .#{$form-block-name}#{$checkbox-element-name} {
             border-color: $color-primary;
+
             &::before {
               background-color: $color-primary;
-              content: "\2713";
-
+              content: '\2713';
               // all browsers EXCEPT IE support using a checkmark SVG instead
               // @supports not (-ms-high-contrast: none) {
               //   content: url("icons/checkmark.svg");
@@ -71,13 +70,14 @@ $checkbox-element-name: "__checkbox";
 
           ~ .#{$form-block-name}#{$checkbox-element-name} {
             border-color: $color-medium-grey;
+
             &::before {
-              content: "";
+              content: '';
             }
           }
 
           &:checked ~ .#{$form-block-name}#{$checkbox-element-name}::before {
-            content: "\2713";
+            content: '\2713';
           }
 
           ~ label {
@@ -91,7 +91,7 @@ $checkbox-element-name: "__checkbox";
         .#{$form-block-name}#{$checkbox-element-name} {
           border-color: $color-red;
         }
-        input[type="checkbox"]:checked {
+        input[type='checkbox']:checked {
           ~ .#{$form-block-name}#{$checkbox-element-name} {
             border-color: $color-red;
             &::before {
